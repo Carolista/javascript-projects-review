@@ -18,14 +18,14 @@ let launchcode = {
 				result += parts[modulus];
 			}
 		}
-		if (result === "") {
-			result = "Rutabagas! That doesn't work.";
-		} else {
-			result += "!";
-		}
-		if (result === "Launch Rocks!") {
-			result += " (CRASH!!!!)";
-		}
+		if (result.length > 0) {
+      result += "!";
+      if (result === "Launch Rocks!") {
+        result += " (CRASH!!!!)";
+      }
+    } else {
+      result += "Rutabagas! That doesn't work.";
+    }
 		return result;
 	}
 }
