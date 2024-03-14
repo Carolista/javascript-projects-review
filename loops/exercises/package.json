@@ -1,0 +1,11 @@
+{
+  "name": "loops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "while-Loop-Exercises.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
