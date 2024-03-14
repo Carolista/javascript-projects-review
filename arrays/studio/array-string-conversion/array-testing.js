@@ -37,6 +37,7 @@ function semiDash() {
 
 //4)
 function reverseSpaces() {
+  
 	let check = " ";
 	let output = protoArray3;
 
@@ -50,8 +51,10 @@ function reverseSpaces() {
 
 //5)
 function commaSpace() {
+
 	let check = ", ";
 	let output = protoArray4;
+
 	//TODO: write the code required for this step
   if (output.includes(check)) {
     output = output.split(check).reverse().join(",");

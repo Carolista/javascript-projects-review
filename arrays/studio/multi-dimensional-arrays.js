@@ -43,7 +43,3 @@ if (userNum < 0 || userNum > 3) {
 
   console.log(`Cabinet ${containsText} contain ${selectedItem}.`);
 }
-
-
-
-
