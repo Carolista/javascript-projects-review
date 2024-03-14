@@ -21,8 +21,10 @@ while (isNaN(numAstronauts) || numAstronauts <= 0 || numAstronauts > 7) {
   
 //c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
 
-while (fuelLevel > 0) {
-  fuelLevel -= 100 * numAstronauts;
+let fuelNeededPer50km = 100 * numAstronauts;
+
+while (fuelLevel - fuelNeededPer50km >= 0) {
+  fuelLevel -= fuelNeededPer50km;
   altitude += 50;
 }
 
