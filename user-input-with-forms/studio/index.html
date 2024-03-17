@@ -1,19 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <head>
-	<meta charset="utf-8">
-	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
+  <meta charset="utf-8" />
+
+  <!-- Bonus Mission Part 2 - Make it visually engaging -->
+  <link href="./style.css" type="text/css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" />
+
+  <script>
+
+    // Make it easy to use the button value to get the URL
+    let actions = {
+      google: 'https://www.google.com/search',
+      duckDuckGo: 'https://duckduckgo.com',
+      bing: 'https://www.bing.com/search',
+      ask: 'https://www.ask.com/web',
+    };
+
+    // Define a named function as the event handler
+    function setSearchEngine() {
+
+      // Create objects for elements to interact with
+      const form = document.querySelector('form');
+      const query = document.getElementById('q');
+      const buttonSelected = document.querySelector('input[name = engine]:checked');
+
+      // Bonus Mission Part 1 - User input validation
+
+      // Option 1: Use window alert
+      // if (query.value.trim() === '') {
+      //   alert("Oops! You didn't enter anything to search for.");
+      //   event.preventDefault();
+      // } else if (!buttonSelected) {
+      //   alert("Oops! Which search engine do you want to use?");
+      //   event.preventDefault();
+      // }
+
+      // Option 2: Display a box with error text on page
+      const errorBox = document.getElementById('error-box');
+      const errorMsg = document.getElementById('error-msg');
+
+      if (query.value.trim() === '') {
+        errorMsg.innerHTML = "Oops! You didn't enter anything to search for.";
+        errorBox.style.visibility = 'visible';
+        event.preventDefault();
+      } else if (!buttonSelected) {
+        errorMsg.innerHTML = 'Oops! Which search engine do you want to use?';
+        errorBox.style.visibility = 'visible';
+        event.preventDefault();
+      } else {
+        errorBox.style.visibility = 'hidden';
+      }
+
+      // Use the actions object to get the correct url
+      let url = actions[buttonSelected.value];
+      form.action = url;
+    }
+
+    // Wait until page loads to register handler for form
+    window.addEventListener('load', function () {
+      const form = document.querySelector('form');
+
+      // Reference the handler function — do not call it
+      form.addEventListener('submit', setSearchEngine); 
     });
-	</script>
+  </script>
 </head>
 
 <body>
+  <h1>Needles from Haystacks</h1>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
-	</form>
+  <div id="search-bar">
+    <p id="search-header">Search anywhere and everywhere!</p>
 
+    <form target="_blank">
+      <input type="text" id="q" name="q" /><br />
+      <label><input type="radio" name="engine" value="google" /> Google</label>
+      <label><input type="radio" name="engine" value="duckDuckGo" /> DuckDuckGo</label>
+      <label><input type="radio" name="engine" value="bing" /> Bing</label>
+      <label><input type="radio" name="engine" value="ask" /> Ask</label>
+      <button id="submit" value="Go!">Go!</button>
+    </form>
+
+  </div>
+
+  <!-- Bonus mission Part 1, Option 2 -->
+  <div id="error-box">
+    <p id="error-msg"></p>
+  </div>
 </body>
