@@ -1,9 +1,14 @@
 // Initialize Variables below
+
+// Report Info
 let date = "Monday 2018-03-18";
 let time = "10:05:34 AM";
 
+// Astronauts
 let astronautCount = 7;
 let astronautStatus = "ready";
+
+// Mass
 let averageAstronautMassKg = 80.7;
 let crewMassKg = astronautCount * averageAstronautMassKg;
 let fuelMassKg = 760000;
@@ -11,13 +16,16 @@ let shuttleMassKg = 74842.31;
 let totalMassKg = crewMassKg + fuelMassKg + shuttleMassKg;
 let maximumMassLimit = 850000;
 
+// Fuel
 let fuelTempCelsius = -225;
 let minimumFuelTemp = -300;
 let maximumFuelTemp = -150;
 let fuelLevel = 1; // 100%
 
+// Weather
 let weatherStatus = "clear";
 
+// Track Liftoff Status
 let preparedForLiftoff = true;
 
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
@@ -52,6 +60,7 @@ if (weatherStatus !== "clear") {
 
 // Verify shuttle launch can proceed based on above conditions
 if (preparedForLiftoff) {
+  // Print report
   console.log("All systems are a go! Initiating space shuttle launch sequence.");
   console.log("---------------------------------------------------------------");
   console.log("Date: " + date);
@@ -66,5 +75,6 @@ if (preparedForLiftoff) {
   console.log("---------------------------------------------------------------");
   console.log("Have a safe trip, astronauts!");
 } else {
+  // Notify launch is aborted
   console.log("Launch aborted.")
 }
