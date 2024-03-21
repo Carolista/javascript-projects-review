@@ -86,7 +86,6 @@ function getFunPhrase(str) {
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
 
-// NOTE from Carrie: I'm avoiding variable shadowing and calling it something other than str since that is the name of my parameter above. I'm also going to test it both ways.
 let funStr = "Functions rock!";
 let shortFunStr = "hi";
 console.log(getFunPhrase(funStr));
@@ -105,5 +104,5 @@ function getRectangleArea(length, width = length) {
   return length * width;
 }
 
-console.log(`The area is ${getRectangleArea(5, 3)}`);
-console.log(`The area is ${getRectangleArea(8)}`);
+console.log(`The area is ${getRectangleArea(5, 3)} cm^2`);
+console.log(`The area is ${getRectangleArea(8)} cm^2`);
