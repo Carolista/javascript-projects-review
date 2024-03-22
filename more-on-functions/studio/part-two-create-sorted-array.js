@@ -21,9 +21,9 @@ function findMinValue(arr){
 function sortNums(arr) {
   let sorted = [];
   while (arr.length) {
-    let indexOfMin = arr.indexOf(findMinValue(arr));
-    sorted.push(arr[indexOfMin]);
-    arr.splice(indexOfMin, 1);
+    let min = findMinValue(arr);
+    sorted.push(min);
+    arr.splice(arr.indexOf(min), 1)
   }
   return sorted;
 }
@@ -38,9 +38,9 @@ function sortNumsRecursive(arr, sorted = []) {
     return sorted;
   } 
   // otherwise, make changes to arr and sorted and recurse
-  let indexOfMin = arr.indexOf(findMinValue(arr));
-  sorted.push(arr[indexOfMin]);
-  arr.splice(indexOfMin, 1);
+  let min = findMinValue(arr);
+  sorted.push(min);
+  arr.splice(arr.indexOf(min), 1)
   return sortNumsRecursive(arr, sorted);
 }
 
