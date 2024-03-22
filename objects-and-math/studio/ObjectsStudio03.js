@@ -25,7 +25,7 @@ function safetySurplus(arr) {
 }
 
 function fuelRequired(arr) {
-	return Math.round(getTotalMass(arr) * 9.5) + safetySurplus(arr);
+	return Math.round(getTotalMass(arr) * 9.5 + safetySurplus(arr));
 }
 
 // The pre-selected crew is in the array at the end of this file.
